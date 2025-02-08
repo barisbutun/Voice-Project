@@ -1,0 +1,28 @@
+spring:
+  application:
+    name:
+      - VoiceSpringBoot
+  jpa:
+    hibernate:
+      ddl-auto: update  # 'create', 'create-drop', 'validate', 'update' gibi de?erler alabilir.
+      show-sql: true
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/VoiceProject
+    username:
+    password:
+    driver-class-name: org.postgresql.Driver
+
+  docker:
+    compose:
+      enabled: true
+      files: C:\Users\Baris\OneDrive - ktun.edu.tr\Masaustu\SpringBoot\Voice\Voice-Project\VoiceSpringBoot\docker-compose.yml
+      services:
+        - postgres
+
+
+server:
+   port: 8082
