@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -17,5 +17,9 @@ public class RegisterDto {
     @JsonProperty("name")
     private String name;
 
+    public RegisterDto(String email, String name) {
+        this.email = email;
+        this.name = name;
+    }
 
 }

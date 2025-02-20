@@ -1,5 +1,6 @@
 package org.example.voicespringboot.mapper;
 
+import org.example.voicespringboot.dto.LoginDto;
 import org.example.voicespringboot.dto.RegisterDto;
 import org.example.voicespringboot.entity.User;
 import org.mapstruct.Mapper;
@@ -17,10 +18,14 @@ import java.util.List;
 )
 public interface UserMapper {
 
-    User toEntity(final RegisterDto registerDto);
+    User toEntityRegister(final RegisterDto registerDto);
 
-    RegisterDto toDto(final User user);
+    User toEntityLogin(final LoginDto loginDto);
 
-    List<RegisterDto> toDtoList(final List<User> userList);
+    LoginDto toDtoLogin(final User user);
+
+    RegisterDto toDtoRegister(final User user);
+
+    List<RegisterDto> toDtoListRegister(final List<User> userList);
 
 }

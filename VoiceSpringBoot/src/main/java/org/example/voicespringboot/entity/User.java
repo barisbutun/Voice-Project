@@ -23,11 +23,8 @@ public class User {
 
     @Id
     @GeneratedValue(generator = "UUID")
-    @GenericGenerator(
-            name = "UUID",
-            strategy = "org.hibernate.id.UUIDGenerator"
-    )
-    @Column(updatable = false, nullable = false,columnDefinition = "BINARY(16)")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(updatable = false, nullable = false, columnDefinition = "UUID")
     private UUID id;
 
     @Column(name="name",nullable = false)
@@ -36,7 +33,7 @@ public class User {
     @Column(name="email",unique = true,nullable = false)
     private String email;
 
-
+    @Enumerated(EnumType.STRING)
     private Role role=Role.USER;
 
     @Enumerated(EnumType.STRING)
